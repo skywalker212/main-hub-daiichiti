@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>2 Broke Girls</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/2_Broke_Girls</URL>
+  <Genres>Comedy</Genres>
+  <NextEpisode>
+    <Name>And the Crime Ring</Name>
+    <Date>2015-02-09T00:00:00</Date>
+    <Version>411</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>And the Move-In Meltdown</Name>
+    <Date>2015-02-02T00:00:00</Date>
+    <Version>410</Version>
+  </LatestEpisode>
+</SerieInfo>

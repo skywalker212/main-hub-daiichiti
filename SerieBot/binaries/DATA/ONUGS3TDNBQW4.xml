@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Shin Chan</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/shin-chan</URL>
+  <Genres>Anime</Genres>
+  <LatestEpisode>
+    <Name>Episode 651</Name>
+    <Date>2008-12-05T00:00:00</Date>
+    <Version>1327</Version>
+  </LatestEpisode>
+</SerieInfo>

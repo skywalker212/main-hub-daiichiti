@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Marvel's Agent Carter</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>New Series</Status>
+  <URL>http://www.tvrage.com/marvel-s-agent-carter</URL>
+  <Genres>Action | Spy/Espionage</Genres>
+  <NextEpisode>
+    <Name>A Sin to Err</Name>
+    <Date>2015-02-10T00:00:00</Date>
+    <Version>106</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>The Iron Ceiling</Name>
+    <Date>2015-02-03T00:00:00</Date>
+    <Version>105</Version>
+  </LatestEpisode>
+</SerieInfo>

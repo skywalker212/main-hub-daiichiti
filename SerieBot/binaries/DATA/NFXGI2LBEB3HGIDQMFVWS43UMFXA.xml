@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Rick Stein's India</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>New Series</Status>
+  <URL>http://www.tvrage.com/rick-stein-s-india</URL>
+  <Genres>Cooking/Food | Lifestyle | Travel</Genres>
+  <LatestEpisode>
+    <Name>Episode 6</Name>
+    <Date>2013-07-22T00:00:00</Date>
+    <Version>106</Version>
+  </LatestEpisode>
+</SerieInfo>

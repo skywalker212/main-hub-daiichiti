@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Sherlock Holmes</Name>
+  <ServiceAddress>www.TheTvDb.com</ServiceAddress>
+  <URL>http://thetvdb.com/api/0E122B1BB1298F0F/series/73529/all/en.xml</URL>
+  <Genres>Crime | Drama | Mystery</Genres>
+  <LatestEpisode>
+    <Name>The Case of the Tyrant's Daughter</Name>
+    <Date>1955-10-17T00:00:00</Date>
+    <Version>139</Version>
+  </LatestEpisode>
+</SerieInfo>

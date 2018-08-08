@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Banana</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>New Series</Status>
+  <URL>http://www.tvrage.com/banana</URL>
+  <Genres>Drama</Genres>
+  <NextEpisode>
+    <Name>Episode 4</Name>
+    <Date>2015-02-12T00:00:00</Date>
+    <Version>104</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>Episode 3</Name>
+    <Date>2015-02-05T00:00:00</Date>
+    <Version>103</Version>
+  </LatestEpisode>
+</SerieInfo>

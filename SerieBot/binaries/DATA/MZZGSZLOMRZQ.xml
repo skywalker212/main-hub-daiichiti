@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Friends</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Ended</Status>
+  <URL>http://www.tvrage.com/Friends</URL>
+  <Genres>Comedy | Romance/Dating</Genres>
+  <LatestEpisode>
+    <Name>The Last One (2)</Name>
+    <Date>2004-05-06T00:00:00</Date>
+    <Version>1018</Version>
+  </LatestEpisode>
+</SerieInfo>

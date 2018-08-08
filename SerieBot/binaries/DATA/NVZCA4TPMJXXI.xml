@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Mr. Robot</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>New Series</Status>
+  <URL>http://www.tvrage.com/mr-robot</URL>
+  <Genres>Crime | Drama</Genres>
+  <LatestEpisode>
+    <Name>eps1.9_zer0-day.avi</Name>
+    <Date>2015-09-02T00:00:00</Date>
+    <Version>110</Version>
+  </LatestEpisode>
+</SerieInfo>

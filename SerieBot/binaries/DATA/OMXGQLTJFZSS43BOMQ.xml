@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>The Shield</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Ended</Status>
+  <URL>http://www.tvrage.com/The_Shield</URL>
+  <Genres>Drama</Genres>
+  <LatestEpisode>
+    <Name>Family Meeting</Name>
+    <Date>2008-11-25T00:00:00</Date>
+    <Version>713</Version>
+  </LatestEpisode>
+</SerieInfo>

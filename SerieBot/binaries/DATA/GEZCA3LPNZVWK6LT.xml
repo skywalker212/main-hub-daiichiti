@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>12 Monkeys</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>New Series</Status>
+  <URL>http://www.tvrage.com/12-monkeys</URL>
+  <Genres>Adventure | Drama | Mystery | Sci-Fi | Thriller</Genres>
+  <NextEpisode>
+    <Name>The Night Room</Name>
+    <Date>2015-02-13T00:00:00</Date>
+    <Version>105</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>Atari</Name>
+    <Date>2015-02-06T00:00:00</Date>
+    <Version>104</Version>
+  </LatestEpisode>
+</SerieInfo>

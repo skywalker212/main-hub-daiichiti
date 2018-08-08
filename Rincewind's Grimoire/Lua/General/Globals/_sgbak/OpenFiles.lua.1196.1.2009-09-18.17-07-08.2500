@@ -1,0 +1,494 @@
+function OpenFiles()
+	
+	local sPXPath = Core.GetPtokaXPath().."scripts/"
+	
+	gsProduct = "Grimoire"
+	--gsProduct = "Octavo"
+	--gsProduct = "DarkClerk"
+	--gsProduct = "Anagrams"
+	--gsProduct = "GuessTheNumber"
+	--gsProduct = "Hangman"
+	--gsProduct = "Numbers"
+	--gsProduct = "Trivia"
+	if gsProduct == "Grimoire" then
+		gsVersionNumber	= "5.2.1"
+		gsVersion		= "•Grimoire• v"..gsVersionNumber
+		gsDescVersion	= "•Gv"..gsVersionNumber.."•"
+		gsVersionDate	= "15/04/2009"
+	elseif gsProduct == "Octavo" then
+		gsVersionNumber	= "3.2.0"
+		gsVersion		= "•Octavo• v"..gsVersionNumber
+		gsDescVersion	= "•Ov"..gsVersionNumber.."•"
+		gsVersionDate	= "12/07/08"
+	elseif gsProduct == "DarkClerk" then
+		gsVersionNumber	= "3.2.0"
+		gsVersion		= "•DarkClerk• v"..gsVersionNumber
+		gsDescVersion	= "•DCv"..gsVersionNumber.."•"
+		gsVersionDate	= "05/05/2009"
+	elseif gsProduct == "Anagrams" then
+		gsVersionNumber	= "2.0.1"
+		gsVersion		= "•Anagrams• v"..gsVersionNumber
+		gsDescVersion	= "•Av"..gsVersionNumber.."•"
+		gsVersionDate	= "18/05/2008"
+	elseif gsProduct == "CodeBreaker" then
+		gsVersionNumber	= "2.0.1"
+		gsVersion		= "•CodeBreaker• v"..gsVersionNumber
+		gsDescVersion	= "•CBv"..gsVersionNumber.."•"
+		gsVersionDate	= "18/05/2008"
+	elseif gsProduct == "GuessTheNumber" then
+		gsVersionNumber	= "1.0.1"
+		gsVersion		= "•GuessTheNumber• v"..gsVersionNumber
+		gsDescVersion	= "•GTNv"..gsVersionNumber.."•"
+		gsVersionDate	= "18/05/2008"
+	elseif gsProduct == "Hangman" then
+		gsVersionNumber	= "2.0.1"
+		gsVersion		= "•Hangman• v"..gsVersionNumber
+		gsDescVersion	= "•Hv"..gsVersionNumber.."•"
+		gsVersionDate	= "18/05/2008"
+	elseif gsProduct == "Numbers" then
+		gsVersionNumber	= "2.0.1"
+		gsVersion		= "•Numbers• v"..gsVersionNumber
+		gsDescVersion	= "•Nv"..gsVersionNumber.."•"
+		gsVersionDate	= "18/05/2008"
+	elseif gsProduct == "Trivia" then
+		gsVersionNumber	= "2.0.4"
+		gsVersion		= "•Trivia• v"..gsVersionNumber
+		gsDescVersion	= "•Tv"..gsVersionNumber.."•"
+		gsVersionDate	= "18/05/2008"
+	elseif gsProduct == "Bookshelf" then
+		gsVersionNumber	= "2.0.0.Beta1"
+		gsVersion		= "•Bookshelf• v"..gsVersionNumber
+		gsVersionDate	= "15/03/2008"
+	elseif gsProduct == "DVDRack" then
+		gsVersionNumber	= "2.0.0.Beta1"
+		gsVersion		= "•DVDRack• v"..gsVersionNumber
+		gsVersionDate	= "15/03/2008"
+	elseif gsProduct == "Jukebox" then
+		gsVersionNumber	= "2.0.0.Beta1"
+		gsVersion		= "•Jukebox• v"..gsVersionNumber
+		gsVersionDate	= "15/03/2008"
+	elseif gsProduct == "Songbook" then
+		gsVersionNumber	= "2.0.0.Beta1"
+		gsVersion		= "•Songbook• v"..gsVersionNumber
+		gsVersionDate	= "15/03/2008"
+	elseif gsProduct == "Arcade" then
+		gsVersionNumber	= "2.0.0.Beta1"
+		gsVersion		= "•Songbook• v"..gsVersionNumber
+		gsVersionDate	= "15/03/2008"
+	elseif gsProduct == "Hyperlink" then
+		gsVersionNumber	= "2.0.0.Beta1"
+		gsVersion		= "•Hyperlink• v"..gsVersionNumber
+		gsVersionDate	= "15/03/2008"
+	end
+	
+	tStringSettings = {
+		bHubName = 0,	-- Hub name. Min length 1, max 256.
+		bAdminNick = 1,	-- Admin nick. Min length 1, max 64, $ is not allowed.
+		bHubAddress = 2,	-- Hub address. Min length 1, max 256.
+		bTCPPorts = 3,	-- TCP ports. Min length 1, max 64.
+		bUDPPort = 4,	-- UDP port. Min length 1, max 5.
+		bHubDescription = 5,	-- Hub description. Max length 256.
+		bMainRedirectAddress = 6,	-- Main redirect address. Max length 256.
+		bHubListServers = 7,	-- Hublist register servers. Max length 1024.
+		bRegUsersOnlyMessage = 8,	-- Registered users only message. Min length 1, max 256.
+		bRegUsersOnlyRedirect = 9,	-- Registered users only redirect address. Max length 256.
+		bHubTopic = 10,	-- Hub topic. Max length 256.
+		bShareLimitMessage = 11,	-- Share limit message. Min length 1, max 256. Use %[min] for min share size and %[max] for max share size.
+		bShareLimitRedirectAddress = 12,	-- Share limit redirect address. Max length 256.
+		bSlotLimitMessage = 13,	-- Slot limit message. Min length 1, max 256. Use %[min] for min slots and %[max] for max slots.
+		bSlotLimitRedirectAddress = 14,	-- Slot limit redirect address. Max length 256.
+		bHubSlotRatioMessage = 15,	-- Hub/slot ratio limit message. Min length 1, max 256. Use %[hubs] for hubs and %[slots] for slots.
+		bHubSlotRatioRedirectAddress = 16,	-- Hub/slot ratio limit redirect address. Max length 256.
+		bMaxHubsMessage = 17,	-- Max hubs limit message. Min length 1, max 256. Use %[hubs] for max hubs.
+		bMaxHubsRedirectAddress = 18,	-- Max hubs limit redirect address. Max length 256.
+		bNoTagMessage = 19,	-- No tag rule message. Min length 1, max 256.
+		bNoTagRedirectAddress = 20,	-- No tag rule redirect address. Max length 256.
+		bHubBotNick = 21,	-- Hub bot nick. Min length 1, max 64, $ and space is not allowed.
+		bHubBotDescription = 22,	-- Hub bot description. Max length 64, $ is not allowed.
+		bHubBotEmail = 23,	-- Hub bot email. Max length 64, $ is not allowed.
+		bOpChatNick = 24,	-- OpChat bot nick. Min length 1, max 64, $ and space is not allowed.
+		bOpChatDescription = 25,	-- OpChat bot description. Max length 64, $ is not allowed.
+		bOpChatEmail = 26,	-- OpChat bot email. Max length 64, $ is not allowed.
+		bTempBanRedirectAddress = 27,	-- Temp ban redirect address. Max length 256.
+		bBanRedirectAddress = 28,	-- Perm ban redirect address. Max length 256.
+		bChatPrefixes = 29,	-- Chat commands prefixes. Min length 1, max 5.
+		bHubOwnerEmail = 30,	-- Hub owner email. Max length 64.
+		bNickLimitMessage = 31,	-- Nick limit message. Min length 1, max 256. Use %[min] for min length and %[max] for max length.
+		bNickLimitRedirectAddress = 32,	-- Nick limit redirect address. Max length 256.
+		bAdditionalBanMessage = 33,	-- Additional message to ban message. Max lenght 256.
+		bLanguage = 34,	-- Language.
+	}
+	
+	if dofile(sPXPath.."Rincewind's "..gsProduct.."/Settings/General/Globals/GeneralSettings.tbl") then
+		loadfile(sPXPath.."Rincewind's "..gsProduct.."/Settings/General/Globals/GeneralSettings.tbl")
+	end
+	if dofile(sPXPath.."Rincewind's "..gsProduct.."/Settings/General/Globals/Switches.tbl") then
+		loadfile(sPXPath.."Rincewind's "..gsProduct.."/Settings/General/Globals/Switches.tbl")
+	end
+	if dofile(sPXPath.."Rincewind's "..gsProduct.."/Settings/General/Globals/EnableRightClicks.tbl") then
+		loadfile(sPXPath.."Rincewind's "..gsProduct.."/Settings/General/Globals/EnableRightClicks.tbl")
+	end
+	
+	local tLuaPaths = {
+		sGlobalFunctions = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Globals/GlobalFunctions.lua", 1},
+		sAvailableCommands = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Globals/AvailableCommands.lua", 1},
+		sTimers = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Globals/Timers.lua", 1},
+		sScriptMain = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Script/ScriptMain.lua", 1},
+		sScriptChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Script/ScriptChatArrival.lua", 1},
+		sScriptNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Script/ScriptNewUserConnected.lua", 1},
+		sScriptUserDisconnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Script/ScriptUserDisconnected.lua", 1},
+		sScriptSearchArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Script/ScriptSearchArrival.lua", 1},
+		sScriptMyINFOArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Script/ScriptMyINFOArrival.lua", 1},
+		sScriptConnectToMeArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Script/ScriptConnectToMeArrival.lua", 1},
+		sScriptMultiConnectToMeArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Script/ScriptMultiConnectToMeArrival.lua", 1},
+		sScriptRevConnectToMeArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Script/ScriptRevConnectToMeArrival.lua", 1},
+		
+		sBotsChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Bots/BotsChatArrival.lua", 1},
+		sBots = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Bots/Bots.lua", 1},
+		sRightClick = {sPXPath.."Rincewind's "..gsProduct.."/Lua/General/Globals/LoadRightClick.lua", 1},
+		
+		sAutoCorrectChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/AutoCorrect/AutoCorrectChatArrival.lua", tSwitches.bAutoCorrect},
+		sAutoCorrect = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/AutoCorrect/AutoCorrect.lua", tSwitches.bAutoCorrect},
+		sChatRooms = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/ChatRooms/ChatRooms.lua", tSwitches.bChatRooms},
+		sChatRoomsChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/ChatRooms/ChatRoomsChatArrival.lua", tSwitches.bChatRooms},
+		sClock = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/Clock/Clock.lua", tSwitches.bClock},
+		sClockChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/Clock/ClockChatArrival.lua", tSwitches.bClock},
+		sKickBarChanger = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/KickBarChanger/KickBarChanger.lua", tSwitches.bKickBarChanger},
+		sMassMessage = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/MassMessage/MassMessage.lua", tSwitches.bMassMessage},
+		sMassMessageChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/MassMessage/MassMessageChatArrival.lua", tSwitches.bMassMessage},
+		sMOTD = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/MOTD/MOTD.lua", tSwitches.bMOTD},
+		sMOTDNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/MOTD/MOTDNewUserConnected.lua", tSwitches.bMOTD},
+		sMuteChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/Mute/MuteChatArrival.lua", tSwitches.bMute},
+		sMute = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/Mute/Mute.lua", tSwitches.bMute},
+		sRotatingMainMessage = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/RotatingMainMessage/RotatingMainMessage.lua", tSwitches.bRotatingMainMessage},
+		sRotatingMainMessageChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/RotatingMainMessage/RotatingMainMessageChatArrival.lua", tSwitches.bRotatingMainMessage},
+		sRotatingPrivateMessage = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/RotatingPrivateMessage/RotatingPrivateMessage.lua", tSwitches.bRotatingPrivateMessage},
+		sRotatingPrivateMessageChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/RotatingPrivateMessage/RotatingPrivateMessageChatArrival.lua", tSwitches.bRotatingPrivateMessage},
+		sTalkChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/Talk/TalkChatArrival.lua", tSwitches.bTalk},
+		sTalk = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/Talk/Talk.lua", tSwitches.bTalk},
+		sTopicChanger = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/TopicChanger/TopicChanger.lua", tSwitches.bTopicChanger},
+		sWelcomeInfo = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/WelcomeInfo/WelcomeInfo.lua", tSwitches.bWelcomeInfo},
+		sWelcomeInfoNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/WelcomeInfo/WelcomeInfoNewUserConnected.lua", tSwitches.bWelcomeInfo},
+		sWhisperChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/Whisper/WhisperChatArrival.lua", tSwitches.bWhisper},
+		sWhisper = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Communication/Whisper/Whisper.lua", tSwitches.bWhisper},
+		
+		sCustomRightClickNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/CustomRightClick/CustomRightClickNewUserConnected.lua", tSwitches.bCustomRightClick},
+		sCustomRightClick = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/CustomRightClick/CustomRightClick.lua", tSwitches.bCustomRightClick},
+		sDescriptionTagsArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/DescriptionTags/DescriptionTagsChatArrival.lua", tSwitches.bDescriptionTags},
+		sDescriptionTagsMyINFOArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/DescriptionTags/DescriptionTagsMyINFOArrival.lua", tSwitches.bDescriptionTags},
+		sDescriptionTagsNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/DescriptionTags/DescriptionTagsNewUserConnected.lua", tSwitches.bDescriptionTags},
+		sDescriptionTags = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/DescriptionTags/DescriptionTags.lua", tSwitches.bDescriptionTags},
+		sHideShareChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/HideShare/HideShareChatArrival.lua", tSwitches.bHideShare},
+		sHideShareConnectToMeArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/HideShare/HideShareConnectToMeArrival.lua", tSwitches.bHideShare},
+		sHideShareMultiConnectToMeArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/HideShare/HideShareMultiConnectToMeArrival.lua", tSwitches.bHideShare},
+		sHideShareRevConnectToMeArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/HideShare/HideShareRevConnectToMeArrival.lua", tSwitches.bHideShare},
+		sHideShareMyINFOArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/HideShare/HideShareMyINFOArrival.lua", tSwitches.bHideShare},
+		sHideShareNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/HideShare/HideShareNewUserConnected.lua", tSwitches.bHideShare},
+		sHideShare = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/HideShare/HideShare.lua", tSwitches.bHideShare},
+		sIntroOutroChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/IntroOutro/IntroOutroChatArrival.lua", tSwitches.bIntroOutro},
+		sIntroOutroNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/IntroOutro/IntroOutroNewUserConnected.lua", tSwitches.bIntroOutro},
+		sIntroOutroUserDisconnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/IntroOutro/IntroOutroUserDisconnected.lua", tSwitches.bIntroOutro},
+		sIntroOutro = {sPXPath.."Rincewind's "..gsProduct.."/Lua/CustomiseUser/IntroOutro/IntroOutro.lua", tSwitches.bIntroOutro},
+		
+		sAnagramsChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Anagrams/AnagramsChatArrival.lua", tSwitches.bAnagrams},
+		sAnagrams = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Anagrams/Anagrams.lua", tSwitches.bAnagrams},
+		sCodeBreakerChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/CodeBreaker/CodeBreakerChatArrival.lua", tSwitches.bCodeBreaker},
+		sCodeBreaker = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/CodeBreaker/CodeBreaker.lua", tSwitches.bCodeBreaker},
+		sGuessTheNumberChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/GuessTheNumber/GuessTheNumberChatArrival.lua", tSwitches.bGuessTheNumber},
+		sGuessTheNumber = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/GuessTheNumber/GuessTheNumber.lua", tSwitches.bGuessTheNumber},
+		sHangmanChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Hangman/HangmanChatArrival.lua", tSwitches.bHangman},
+		sHangman = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Hangman/Hangman.lua", tSwitches.bHangman},
+		sNumbersChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Numbers/NumbersChatArrival.lua", tSwitches.bNumbers},
+		sNumbers = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Numbers/Numbers.lua", tSwitches.bNumbers},
+		sRussianRouletteChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/RussianRoulette/RussianRouletteChatArrival.lua", tSwitches.bRussianRoulette},
+		sRussianRoulette = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/RussianRoulette/RussianRoulette.lua", tSwitches.bRussianRoulette},
+		sSlotMachineChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/SlotMachine/SlotMachineChatArrival.lua", tSwitches.bSlotMachine},
+		sSlotMachine = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/SlotMachine/SlotMachine.lua", tSwitches.bSlotMachine},
+		sThreeCardMontyChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/ThreeCardMonty/ThreeCardMontyChatArrival.lua", tSwitches.bThreeCardMonty},
+		sThreeCardMonty = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/ThreeCardMonty/ThreeCardMonty.lua", tSwitches.bThreeCardMonty},
+		sTriviaChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Trivia/TriviaChatArrival.lua", tSwitches.bTrivia},
+		sTrivia = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Trivia/Trivia.lua", tSwitches.bTrivia},
+		sQuiz = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Quiz/Quiz.lua", 1},
+		sQuizChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Games/Quiz/QuizChatArrival.lua", 1},
+		
+		sAntiAdvertiseChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/AntiAdvertise/AntiAdvertiseChatArrival.lua", tSwitches.bAntiAdvertise},
+		sAntiAdvertiseNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/AntiAdvertise/AntiAdvertiseNewUserConnected.lua", tSwitches.bAntiAdvertise},
+		sAntiAdvertise = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/AntiAdvertise/AntiAdvertise.lua", tSwitches.bAntiAdvertise},
+		sAntiVirusNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/AntiVirus/AntiVirusNewUserConnected.lua", tSwitches.bAntiVirus},
+		sAntiVirus = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/AntiVirus/AntiVirus.lua", tSwitches.bAntiVirus},
+		sBadNickBlockerNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/BadNickBlocker/BadNickBlockerNewUserConnected.lua", tSwitches.bBadNickBlocker},
+		sBadNickBlocker = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/BadNickBlocker/BadNickBlocker.lua", tSwitches.bBadNickBlocker},
+		sClientCheckerNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/ClientChecker/ClientCheckerNewUserConnected.lua", tSwitches.bClientChecker},
+		sClientChecker = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/ClientChecker/ClientChecker.lua", tSwitches.bClientChecker},
+		sCloneBlockerChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/CloneBlocker/CloneBlockerChatArrival.lua", tSwitches.bCloneBlocker},
+		sCloneBlockerNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/CloneBlocker/CloneBlockerNewUserConnected.lua", tSwitches.bCloneBlocker},
+		sCloneBlocker = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/CloneBlocker/CloneBlocker.lua", tSwitches.bCloneBlocker},
+		sCommandSpyChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/CommandSpy/CommandSpyChatArrival.lua", tSwitches.bCommandSpy},
+		sCommandSpy = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/CommandSpy/CommandSpy.lua", tSwitches.bCommandSpy},
+		sFlood = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Flood/Flood.lua", tSwitches.bFlood},
+		sFloodChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Flood/FloodChatArrival.lua", tSwitches.bFlood},
+		sKickChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Kick/KickChatArrival.lua", tSwitches.bKicks},
+		sKickNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Kick/KickNewUserConnected.lua", tSwitches.bKicks},
+		sKick = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Kick/Kick.lua", tSwitches.bKicks},
+		sMainBlock = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/MainBlock/MainBlock.lua", tSwitches.bMainBlock},
+		sMainBlockChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/MainBlock/MainBlockChatArrival.lua", tSwitches.bMainBlock},
+		sMainCleaner = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/MainCleaner/MainCleaner.lua", tSwitches.bMainCleaner},
+		sMainCleanerChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/MainCleaner/MainCleanerChatArrival.lua", tSwitches.bMainCleaner},
+		sMainLock = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/MainLock/MainLock.lua", tSwitches.bMainLock},
+		sMainLockChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/MainLock/MainLockChatArrival.lua", tSwitches.bMainLock},
+		sPrivateHub = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/PrivateHub/PrivateHub.lua", tSwitches.bPrivateHub},
+		sPrivateHubNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/PrivateHub/PrivateHubNewUserConnected.lua", tSwitches.bPrivateHub},
+		sPrivateHubSearchArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/PrivateHub/PrivateHubSearchArrival.lua", tSwitches.bPrivateHub},
+		sPrivateHubChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/PrivateHub/PrivateHubChatArrival.lua", tSwitches.bPrivateHub},
+		sPrivateHubConnectToMeArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/PrivateHub/PrivateHubConnectToMeArrival.lua", tSwitches.bPrivateHub},
+		sPrivateHubMultiConnectToMeArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/PrivateHub/PrivateHubMultiConnectToMeArrival.lua", tSwitches.bPrivateHub},
+		sPrivateHubRevConnectToMeArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/PrivateHub/PrivateHubRevConnectToMeArrival.lua", tSwitches.bPrivateHub},
+		sProfileRules = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/ProfileRules/ProfileRules.lua", tSwitches.bProfileRules},
+		sProfileRulesNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/ProfileRules/ProfileRulesNewUserConnected.lua", tSwitches.bProfileRules},
+		sProfileRulesChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/ProfileRules/ProfileRulesChatArrival.lua", tSwitches.bProfileRules},
+		sPtokaX = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/PtokaX/PtokaX.lua", tSwitches.bPtokaXSettings},
+		sPtokaXChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/PtokaX/PtokaXChatArrival.lua", tSwitches.bPtokaXSettings},
+		sRegistrationChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Registration/RegistrationChatArrival.lua", tSwitches.bRegistration},
+		sRegistration = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Registration/Registration.lua", tSwitches.bRegistration},
+		sReportChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Report/ReportChatArrival.lua", tSwitches.bReport},
+		sReport = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Report/Report.lua", tSwitches.bReport},
+		sRulesChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Rules/RulesChatArrival.lua", tSwitches.bRules},
+		sRules = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/Rules/Rules.lua", tSwitches.bRules},
+		sSearchSpyChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/SearchSpy/SearchSpyChatArrival.lua", tSwitches.bSearchSpy},
+		sSearchSpySearchArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/SearchSpy/SearchSpySearchArrival.lua", tSwitches.bSearchSpy},
+		sSearchSpy = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/SearchSpy/SearchSpy.lua", tSwitches.bSearchSpy},
+		sUserLogChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/UserLog/UserLogChatArrival.lua", tSwitches.bUserLog},
+		sUserLogNewUserConnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/UserLog/UserLogNewUserConnected.lua", tSwitches.bUserLog},
+		sUserLogUserDisconnected = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/UserLog/UserLogUserDisconnected.lua", tSwitches.bUserLog},
+		sUserLog = {sPXPath.."Rincewind's "..gsProduct.."/Lua/Security/UserLog/UserLog.lua", tSwitches.bUserLog},
+		
+		sAscii = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Ascii/Ascii.lua", tSwitches.bAscii},
+		sAsciiChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Ascii/AsciiChatArrival.lua", tSwitches.bAscii},
+		sAttacks = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Attacks/Attacks.lua", tSwitches.bAttacks},
+		sAttacksChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Attacks/AttacksChatArrival.lua", tSwitches.bAttacks},
+		sCalculator = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Calculator/Calculator.lua", tSwitches.bCalculator},
+		sCalculatorChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Calculator/CalculatorChatArrival.lua", tSwitches.bCalculator},
+		sDoAction = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/DoAction/DoAction.lua", tSwitches.bDoAction},
+		sDoActionChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/DoAction/DoActionChatArrival.lua", tSwitches.bDoAction},
+		sInsults = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Insults/Insults.lua", tSwitches.bInsults},
+		sInsultsChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Insults/InsultsChatArrival.lua", tSwitches.bInsults},
+		sJokes = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Jokes/Jokes.lua", tSwitches.bJokes},
+		sJokesChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Jokes/JokesChatArrival.lua", tSwitches.bJokes},
+		sLimericks = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Limericks/Limericks.lua", tSwitches.bLimericks},
+		sLimericksChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Limericks/LimericksChatArrival.lua", tSwitches.bLimericks},
+		sProverbs = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Proverbs/Proverbs.lua", tSwitches.bProverbs},
+		sProverbsChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Proverbs/ProverbsChatArrival.lua", tSwitches.bProverbs},
+		sQuotations = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Quotations/Quotations.lua", tSwitches.bQuotations},
+		sQuotationsChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Quotations/QuotationsChatArrival.lua", tSwitches.bQuotations},
+		sSpells = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Spells/Spells.lua", tSwitches.bSpells},
+		sSpellsChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/Spells/SpellsChatArrival.lua", tSwitches.bSpells},
+		sNickSpells = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/NickSpells/NickSpells.lua", tSwitches.bNickSpells},
+		sNickSpellsChatArrival = {sPXPath.."Rincewind's "..gsProduct.."/Lua/UserActions/NickSpells/NickSpellsChatArrival.lua", tSwitches.bNickSpells},
+	}
+	for i,v in pairs(tLuaPaths) do
+		if v[2] == 1 then if loadfile(v[1]) then dofile(v[1]) else Core.SendToNick("Rincewind", "Error: cannot open "..v[1]) end end
+	end
+	
+	tSettingPaths = {
+		sSwitches = {sPXPath.."Rincewind's "..gsProduct.."/Settings/General/Globals/Switches.tbl", 1},
+		sBots = {sPXPath.."Rincewind's "..gsProduct.."/Settings/General/Bots/Bots.tbl", 1},
+		sBotSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/General/Bots/BotSettings.tbl", 1},
+		
+		sAutoCorrectSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/AutoCorrect/AutoCorrectSettings.tbl", tSwitches.bAutoCorrect},
+		sAutoCorrectWords = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/AutoCorrect/AutoCorrectWords.tbl", tSwitches.bAutoCorrect},
+		sAutoCorrectFilters = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/AutoCorrect/AutoCorrectFilters.tbl", tSwitches.bAutoCorrect},
+		sChatRoomSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/ChatRooms/ChatRoomSettings.tbl", tSwitches.bChatRooms},
+		sChatRooms = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/ChatRooms/ChatRooms.tbl", tSwitches.bChatRooms},
+		sClockSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/Clock/ClockSettings.tbl", tSwitches.bClock},
+		sKickBarChangerSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/KickBarChanger/KickBarChangerSettings.tbl", tSwitches.bKickBarChanger},
+		sKickBarChangerTopics = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/KickBarChanger/KickBarChangerTopics.tbl", tSwitches.bKickBarChanger},
+		sMassMessageSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/MassMessage/MassMessageSettings.tbl", tSwitches.bMassMessage},
+		sMassMessagePassiveImmune = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/MassMessage/MassMessagePassiveImmune.tbl", tSwitches.bMassMessage},
+		sMOTDSettingsSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/MOTD/MOTDSettings.tbl", tSwitches.bMOTD},
+		sMute = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/Mute/Mute.tbl", tSwitches.bMute},
+		sRotatingMainMessageSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/RotatingMainMessage/RotatingMainMessageSettings.tbl", tSwitches.bRotatingMainMessage},
+		sRotatingMainMessageFilesIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/RotatingMainMessage/RotatingMainMessageFiles.tbl", tSwitches.bRotatingMainMessage},
+		sRotatingPrivateMessageSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/RotatingPrivateMessage/RotatingPrivateMessageSettings.tbl", tSwitches.bRotatingPrivateMessage},
+		sRotatingPrivateMessageFilesIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/RotatingPrivateMessage/RotatingPrivateMessageFiles.tbl", tSwitches.bRotatingPrivateMessage},
+		sRotatingPrivateMessageImmuneUsers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/RotatingPrivateMessage/RotatingPrivateMessageImmuneUsers.tbl", tSwitches.bRotatingPrivateMessage},
+		sTalk = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/Talk/Talk.tbl", tSwitches.bTalk},
+		sTopicChangerSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/TopicChanger/TopicChangerSettings.tbl", tSwitches.bTopicChanger},
+		sTopicChangerTopics = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/TopicChanger/TopicChangerTopics.tbl", tSwitches.bTopicChanger},
+		sWelcomeInfoSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/WelcomeInfo/WelcomeInfoSettings.tbl", tSwitches.bWelcomeInfo},
+		sWelcomeInfoNetworkHubs = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/WelcomeInfo/WelcomeInfoNetworkHubs.tbl", tSwitches.bWelcomeInfo},
+		sWhisper = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/Whisper/WhisperSettings.tbl", tSwitches.bWhisper},
+		
+		sCustomRightClick = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/CustomRightClick/CustomRightClick.tbl", tSwitches.bCustomRightClick},
+		sDescriptionTagSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/DescriptionTags/DescriptionTagSettings.tbl", tSwitches.bDescriptionTags},
+		sDescriptionTags = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/DescriptionTags/DescriptionTags.tbl", tSwitches.bDescriptionTags},
+		sHideShareSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/HideShare/HideShareSettings.tbl", tSwitches.bHideShare},
+		sHideShareUsers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/HideShare/HideShareUsers.tbl", tSwitches.bHideShare},
+		sAsciiIntroOutro = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/AsciiIntroSettings.tbl", tSwitches.bIntroOutro},
+		sAsciiIntroIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/AsciiIntroIndex.tbl", tSwitches.bIntroOutro},
+		sAsciiIntro = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/AsciiIntro.tbl", tSwitches.bIntroOutro},
+		sIntroOutroSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/IntroOutroSettings.tbl", tSwitches.bIntroOutro},
+		sCustomIntroOutroSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/CustomIntroOutroSettings.tbl", tSwitches.bIntroOutro},
+		sIntro = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/Intro.tbl", tSwitches.bIntroOutro},
+		sOutro = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/Outro.tbl", tSwitches.bIntroOutro},
+		sCustomIntro = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/CustomIntro.tbl", tSwitches.bIntroOutro},
+		sCustomOutro = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/CustomOutro.tbl", tSwitches.bIntroOutro},
+		
+		sQuizScoreClearers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Globals/ScoreClearers.tbl", 1},
+		sAnagramSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Anagrams/AnagramSettings.tbl", tSwitches.bAnagrams},
+		sAnagramPlayers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Anagrams/AnagramPlayers.tbl", tSwitches.bAnagrams},
+		sAnagramScoresArchiveIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Anagrams/AnagramScoresArchiveIndex.tbl", tSwitches.bAnagrams},
+		sCodeBreakerSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/CodeBreaker/CodeBreakerSettings.tbl", tSwitches.bCodeBreaker},
+		sCodeBreakerPlayers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/CodeBreaker/CodeBreakerPlayers.tbl", tSwitches.bCodeBreaker},
+		sCodeBreakerScoresArchiveIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/CodeBreaker/CodeBreakerScoresArchiveIndex.tbl", tSwitches.bCodeBreaker},
+		sGuessTheNumberSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/GuessTheNumber/GuessTheNumberSettings.tbl", tSwitches.bGuessTheNumber},
+		sGuessTheNumberPlayers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/GuessTheNumber/GuessTheNumberPlayers.tbl", tSwitches.bGuessTheNumber},
+		sGuessTheNumberScoresArchiveIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/GuessTheNumber/GuessTheNumberScoresArchiveIndex.tbl", tSwitches.bGuessTheNumber},
+		sHangmanSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Hangman/HangmanSettings.tbl", tSwitches.bHangman},
+		sHangmanPlayers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Hangman/HangmanPlayers.tbl", tSwitches.bHangman},
+		sHangmanScoresArchiveIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Hangman/HangmanScoresArchiveIndex.tbl", tSwitches.bHangman},
+		sNumbersSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Numbers/NumbersSettings.tbl", tSwitches.bNumbers},
+		sNumbersPlayers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Numbers/NumbersPlayers.tbl", tSwitches.bNumbers},
+		sNumbersScoresArchiveIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Numbers/NumbersScoresArchiveIndex.tbl", tSwitches.bNumbers},
+		sRussianRouletteSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/RussianRoulette/RussianRouletteSettings.tbl", tSwitches.bRussianRoulette},
+		sRussianRouletteLive = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/RussianRoulette/RussianRouletteLive.tbl", tSwitches.bRussianRoulette},
+		sRussianRouletteDie = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/RussianRoulette/RussianRouletteDie.tbl", tSwitches.bRussianRoulette},
+		sSlotMachineSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/SlotMachine/SlotMachineSettings.tbl", tSwitches.bSlotMachine},
+		sSlotMachinePlayers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/SlotMachine/SlotMachinePlayers.tbl", tSwitches.bSlotMachine},
+		sThreeCardMontySettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/ThreeCardMonty/ThreeCardMontySettings.tbl", tSwitches.bThreeCardMonty},
+		sThreeCardMontyLose = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/ThreeCardMonty/ThreeCardMontyLose.tbl", tSwitches.bThreeCardMonty},
+		sThreeCardMontyWin = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/ThreeCardMonty/ThreeCardMontyWin.tbl", tSwitches.bThreeCardMonty},
+		sTriviaSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Trivia/TriviaSettings.tbl", tSwitches.bTrivia},
+		sTriviaQuestionFilesIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Trivia/TriviaQuestionFiles.tbl", tSwitches.bTrivia},
+		sTriviaPlayers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Trivia/TriviaPlayers.tbl", tSwitches.bTrivia},
+		sTriviaScoresArchiveIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Trivia/TriviaScoresArchiveIndex.tbl", tSwitches.bTrivia},
+		
+		sAntiAdvertiseSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/AntiAdvertise/AntiAdvertiseSettings.tbl", tSwitches.bAntiAdvertise},
+		sAntiAdvertiseBlockedActions = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/AntiAdvertise/AntiAdvertiseBlockedActions.tbl", tSwitches.bAntiAdvertise},
+		sAntiAdvertiseBlockedAddresses = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/AntiAdvertise/AntiAdvertiseBlockedAddresses.tbl", tSwitches.bAntiAdvertise},
+		sAntiAdvertiseAllowedAddresses = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/AntiAdvertise/AntiAdvertiseAllowedAddresses.tbl", tSwitches.bAntiAdvertise},
+		sAntiVirusSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/AntiVirus/AntiVirusSettings.tbl", tSwitches.bAntiVirus},
+		sBadNickBlockerSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/BadNickBlocker/BadNickBlockerSettings.tbl", tSwitches.bBadNickBlocker},
+		sBadNickBlockerNickList = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/BadNickBlocker/BadNickBlockerNickList.tbl", tSwitches.bBadNickBlocker},
+		sClientCheckerSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/ClientChecker/ClientCheckerSettings.tbl", tSwitches.bClientChecker},
+		sClientCheckerVersions = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/ClientChecker/ClientVersions.tbl", tSwitches.bClientChecker},
+		sCloneBlockerSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/CloneBlocker/CloneBlockerSettings.tbl", tSwitches.bCloneBlocker},
+		sCloneBlockerExemptUsers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/CloneBlocker/CloneBlockerExemptUsers.tbl", tSwitches.bCloneBlocker},
+		sCommandSpySettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/CommandSpy/CommandSpySettings.tbl", tSwitches.bCommandSpy},
+		sCommandSpyUsers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/CommandSpy/CommandSpyUsers.tbl", tSwitches.bCommandSpy},
+		sFloodSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Flood/FloodSettings.tbl", tSwitches.bFlood},
+		sKickSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/KickSettings.tbl", tSwitches.bKicks},
+		sKickLog = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/Logs/KickLog.tbl", tSwitches.bKicks},
+		sKickerLog = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/Logs/KickerLog.tbl", tSwitches.bKicks},
+		sKickCanDrop = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/KickCanDrop.tbl", tSwitches.bKicks},
+		sKickCanWarn = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/KickCanWarn.tbl", tSwitches.bKicks},
+		sKickCanKick = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/KickCanKick.tbl", tSwitches.bKicks},
+		sKickCanTempBan = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/KickCanTempBan.tbl", tSwitches.bKicks},
+		sKickCanBan = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/KickCanBan.tbl", tSwitches.bKicks},
+		sKickCanUnban = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/KickCanUnban.tbl", tSwitches.bKicks},
+		sMainBlockSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/MainBlock/MainBlockSettings.tbl", tSwitches.bMainBlock},
+		sMainCleanerSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/MainCleaner/MainCleanerSettings.tbl", tSwitches.bMainCleaner},
+		sMainLockSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/MainLock/MainLockSettings.tbl", tSwitches.bMainLock},
+		sPrivateHubSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/PrivateHub/PrivateHubSettings.tbl", tSwitches.bPrivateHub},
+		sProfileRules = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/ProfileRules/ProfileRules.tbl", tSwitches.bProfileRules},
+		sProfileRulesSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/ProfileRules/ProfileRuleSettings.tbl", tSwitches.bProfileRules},
+		sProfileRulesExemptUsers = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/ProfileRules/ProfileRulesExemptUsers.tbl", tSwitches.bProfileRules},
+		sProfileRulesRedirectCounter = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/ProfileRules/ProfileRulesRedirectCounter.tbl", tSwitches.bProfileRules},
+		sPtokaXSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/PtokaX/PtokaXSettings.tbl", tSwitches.bPtokaXSettings},
+		sRegistrationSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Registration/RegistrationSettings.tbl", tSwitches.bRegistration},
+		sRegistrationAdd = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Registration/RegistrationAdd.tbl", tSwitches.bRegistration},
+		sRegistrationDelete = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Registration/RegistrationDelete.tbl", tSwitches.bRegistration},
+		sRegistrationChangePassword = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Registration/RegistrationChangePassword.tbl", tSwitches.bRegistration},
+		sRegistrationGetPassword = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Registration/RegistrationGetPassword.tbl", tSwitches.bRegistration},
+		sReportSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Report/ReportSettings.tbl", tSwitches.bReport},
+		sSearchSpySettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/SearchSpy/SearchSpySettings.tbl", tSwitches.bSearchSpy},
+		sSearchSpyFiles = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/SearchSpy/SearchSpyFiles.tbl", tSwitches.bSearchSpy},
+		sUserLogSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/UserLog/UserLogSettings.tbl", tSwitches.bUserLog},
+		sUserLogImmune = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/UserLog/UserLogImmuneList.tbl", tSwitches.bUserLog},
+		sUserLog = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/UserLog/UserLog.tbl", tSwitches.bUserLog},
+		
+		sAsciiSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Ascii/AsciiSettings.tbl", tSwitches.bAscii},
+		sAsciiIndex = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Ascii/AsciiIndex.tbl", tSwitches.bAscii},
+		sAttacks = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Attacks/Attacks.tbl", tSwitches.bAttacks},
+		sCalculatorSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Calculator/CalculatorSettings.tbl", tSwitches.bCalculator},
+		sDoAction = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/DoAction/DoAction.tbl", tSwitches.bDoAction},
+		sInsults = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Insults/Insults.tbl", tSwitches.bInsults},
+		sInsultsModern = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Insults/InsultsModern.tbl", tSwitches.bInsults},
+		sInsultsMedieval = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Insults/InsultsMedieval.tbl", tSwitches.bInsults},
+		sJokes = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Jokes/Jokes.tbl", tSwitches.bJokes},
+		sJokeSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Jokes/JokeSettings.tbl", tSwitches.bJokes},
+		sLimericks = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Limericks/Limericks.tbl", tSwitches.bLimericks},
+		sLimerickSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Limericks/LimerickSettings.tbl", tSwitches.bLimericks},
+		sProverbs = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Proverbs/Proverbs.tbl", tSwitches.bProverbs},
+		sProverbSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Proverbs/ProverbSettings.tbl", tSwitches.bProverbs},
+		sQuotations = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Quotations/Quotations.tbl", tSwitches.bQuotations},
+		sQuotationSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Quotations/QuotationSettings.tbl", tSwitches.bQuotations},
+		sSpells = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Spells/SpellBook.tbl", tSwitches.bSpells},
+		sSpellWards = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Spells/SpellWards.tbl", tSwitches.bSpells},
+		sSpellSettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Spells/SpellSettings.tbl", tSwitches.bSpells},
+		sNickSpells = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/NickSpells/NickSpellBook.tbl", tSwitches.bNickSpells},
+		sNickSpellsettings = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/NickSpells/NickSpellSettings.tbl", tSwitches.bNickSpells},
+	}
+	for i,v in pairs(tSettingPaths) do
+		if v[2] == 1 then if loadfile(v[1]) then dofile(v[1]) else Core.SendToNick("Rincewind", "Error: cannot open "..v[1]) end end
+	end
+	
+	tSettingPaths.sMassMessagePassive = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/MassMessage/Passive.asc", tSwitches.bMassMessage}
+	tSettingPaths.sMOTDs = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/MOTD/MOTDs/!filename!.asc", tSwitches.bMOTD}
+	tSettingPaths.sRotatingMainMessageFiles = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/RotatingMainMessage/Files/", tSwitches.bRotatingMainMessage}
+	tSettingPaths.sRotatingPrivateMessageFiles = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Communication/RotatingPrivateMessage/Files/", tSwitches.bRotatingPrivateMessage}
+	
+	tSettingPaths.sAsciiIntroFiles = {sPXPath.."Rincewind's "..gsProduct.."/Settings/CustomiseUser/IntroOutro/Ascii", tSwitches.bAscii}
+	
+	tSettingPaths.sAnagramWords = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Anagrams/AnagramWords.lst", tSwitches.bAnagrams}
+	tSettingPaths.sAnagramScores = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Anagrams/AnagramScores.tbl", tSwitches.bAnagrams}
+	tSettingPaths.sAnagramScoresArchive = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Anagrams/ScoresArchive/!filename!.tbl", tSwitches.bAnagrams}
+	tSettingPaths.sCodeBreakerScores = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/CodeBreaker/CodeBreakerScores.tbl", tSwitches.bCodeBreaker}
+	tSettingPaths.sCodeBreakerScoresArchive = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/CodeBreaker/ScoresArchive/!filename!.tbl", tSwitches.bCodeBreaker}
+	tSettingPaths.sGuessTheNumberScores = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/GuessTheNumber/GuessTheNumberScores.tbl", tSwitches.bGuessTheNumber}
+	tSettingPaths.sGuessTheNumberScoresArchive = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/GuessTheNumber/ScoresArchive/!filename!.tbl", tSwitches.bGuessTheNumber}
+	tSettingPaths.sNumbersScores = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Numbers/NumbersScores.tbl", tSwitches.bNumbers}
+	tSettingPaths.sNumbersQuestions = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Numbers/NumbersQuestions.lst", tSwitches.bNumbers}
+	tSettingPaths.sNumbersScoresArchive = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Numbers/ScoresArchive/!filename!.tbl", tSwitches.bNumbers}
+	tSettingPaths.sHangmanWords = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Hangman/HangmanWords.lst", tSwitches.bHangman}
+	tSettingPaths.sHangmanScores = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Hangman/HangmanScores.tbl", tSwitches.bHangman}
+	tSettingPaths.sHangmanScoresArchive = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Hangman/ScoresArchive/!filename!.tbl", tSwitches.bHangman}
+	tSettingPaths.sHangmanAscii = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Hangman/Ascii/", tSwitches.bHangman}
+	tSettingPaths.sTriviaQuestionFiles = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Trivia/QuestionFiles/", tSwitches.bTrivia}
+	tSettingPaths.sTriviaScores = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Trivia/TriviaScores.tbl", tSwitches.bTrivia}
+	tSettingPaths.sTriviaScoresArchive = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Games/Trivia/ScoresArchive/!filename!.tbl", tSwitches.bTrivia}
+	
+	tSettingPaths.sKickAscii = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Kick/KickAscii.asc", tSwitches.bKicks}
+	tSettingPaths.sMainCleanerAscii = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/MainCleaner/MainCleaner.asc", tSwitches.bMainCleaner}
+	tSettingPaths.sRedirectionLog = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/ProfileRules/Logs/", tSwitches.bPofileRules}
+	tSettingPaths.sRegistrationLogs = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Registration/Logs/", tSwitches.bRegistration}
+	tSettingPaths.sRules = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/Rules/Ascii/", tSwitches.bRules}
+	tSettingPaths.sUserLogFiles = {sPXPath.."Rincewind's "..gsProduct.."/Settings/Security/UserLog/Logs/", tSwitches.bUserLogs}
+	
+	tSettingPaths.sAscii = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Ascii/Ascii/", tSwitches.bAscii}
+	tSettingPaths.sSpells = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/Spells/Spells/!filename!.tbl", tSwitches.bSpells}
+	tSettingPaths.sNickSpells = {sPXPath.."Rincewind's "..gsProduct.."/Settings/UserActions/NickSpells/NickSpells/!filename!.tbl", tSwitches.bNickSpells}
+	
+	tSettingPaths.sChangeLog = {sPXPath.."Rincewind's "..gsProduct.."/Settings/ChangeLog.txt", 1}
+	
+	-- command files
+	if dofile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/Commands/CommandLanguages.tbl") then
+		loadfile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/Commands/CommandLanguages.tbl")
+	end
+	if dofile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/Commands/Files/"..tCommandLanguages.Current..".tbl") then
+		loadfile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/Commands/Files/"..tCommandLanguages.Current..".tbl")
+	end
+	-- right click files
+	if dofile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/RightClick/RightClickLanguages.tbl") then
+		loadfile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/RightClick/RightClickLanguages.tbl")
+	end
+	if dofile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/RightClick/Files/"..tRightClickLanguages.Current..".tbl") then
+		loadfile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/RightClick/Files/"..tRightClickLanguages.Current..".tbl")
+	end
+	-- message files
+	if dofile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/Messages/MessageLanguages.tbl") then
+		loadfile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/Messages/MessageLanguages.tbl")
+	end
+	if dofile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/Messages/Files/"..tMessageLanguages.Current..".tbl") then
+		loadfile(sPXPath.."Rincewind's "..gsProduct.."/Settings/Language/Messages/Files/"..tMessageLanguages.Current..".tbl")
+	end
+end

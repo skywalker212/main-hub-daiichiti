@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>House of Cards</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Canceled/Ended</Status>
+  <URL>http://www.tvrage.com/house-of-cards</URL>
+  <Genres>Drama</Genres>
+  <LatestEpisode>
+    <Name>Episode 4</Name>
+    <Date>1990-12-09T00:00:00</Date>
+    <Version>104</Version>
+  </LatestEpisode>
+</SerieInfo>

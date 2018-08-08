@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Lost</Name>
+  <ServiceAddress>www.TheTvDb.com</ServiceAddress>
+  <URL>http://thetvdb.com/api/0E122B1BB1298F0F/series/73739/all/en.xml</URL>
+  <Genres>Action | Adventure | Drama | Science-Fiction</Genres>
+  <LatestEpisode>
+    <Name>The End (2)</Name>
+    <Date>2010-05-23T00:00:00</Date>
+    <Version>618</Version>
+  </LatestEpisode>
+</SerieInfo>

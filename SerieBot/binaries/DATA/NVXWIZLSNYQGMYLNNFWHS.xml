@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Modern Family</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/Modern_Family</URL>
+  <Genres>Comedy</Genres>
+  <NextEpisode>
+    <Name>Valentine's Day 4: Twisted Sister</Name>
+    <Date>2015-02-11T00:00:00</Date>
+    <Version>614</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>Rash Decisions</Name>
+    <Date>2015-02-04T00:00:00</Date>
+    <Version>613</Version>
+  </LatestEpisode>
+</SerieInfo>

@@ -1,0 +1,20 @@
+System.Security.Authentication.AuthenticationException: A call to SSPI failed, see inner exception. ---> System.ComponentModel.Win32Exception: The message received was unexpected or badly formatted
+   --- End of inner exception stack trace ---
+   at System.Net.Security.SslState.CheckThrow(Boolean authSucessCheck)
+   at System.Net.Security.SslState.get_SecureStream()
+   at System.Net.Security.SslStream.Write(Byte[] buffer, Int32 offset, Int32 count)
+   at FlowLib.Connections.TcpConnection.Send(Byte[] raw) in C:\Code\FlowLib\trunk\FlowLib\Connections\TcpConnection.cs:line 667
+   at FlowLib.Connections.TcpConnection.Send(IConMessage msg) in C:\Code\FlowLib\trunk\FlowLib\Connections\TcpConnection.cs:line 632
+   at FlowLib.Protocols.TransferNmdcProtocol.OnMessageToSend(Object sender, FmdcEventArgs e) in C:\Code\FlowLib\trunk\FlowLib\Protocols\transfernmdcprotocol.cs:line 963
+   at FlowLib.Protocols.TransferNmdcProtocol.OnSend(IConMessage msg) in C:\Code\FlowLib\trunk\FlowLib\Protocols\transfernmdcprotocol.cs:line 410
+   at FlowLib.Connections.TcpConnection.Send(IConMessage msg) in C:\Code\FlowLib\trunk\FlowLib\Connections\TcpConnection.cs:line 630
+   at FlowLib.Connections.TcpConnection.SetupRecieveCallback(Socket sock) in C:\Code\FlowLib\trunk\FlowLib\Connections\TcpConnection.cs:line 494
+   at FlowLib.Connections.TcpConnection.OnConnect(IAsyncResult ar) in C:\Code\FlowLib\trunk\FlowLib\Connections\TcpConnection.cs:line 462
+   at System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+   at System.Net.ContextAwareResult.CompleteCallback(Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Net.ContextAwareResult.Complete(IntPtr userToken)
+   at System.Net.LazyAsyncResult.ProtectedInvokeCallback(Object result, IntPtr userToken)
+   at System.Net.Sockets.Socket.ConnectCallback()
+   at System.Net.Sockets.Socket.RegisteredWaitCallback(Object state, Boolean timedOut)
+   at System.Threading._ThreadPoolWaitOrTimerCallback.PerformWaitOrTimerCallback(Object state, Boolean timedOut)

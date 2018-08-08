@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Teen Wolf</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/Teen_Wolf</URL>
+  <Genres>Drama | Fantasy | Teens</Genres>
+  <NextEpisode>
+    <Name>Creatures of the Night</Name>
+    <Date>2015-06-01T00:00:00</Date>
+    <Version>501</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>Smoke and Mirrors</Name>
+    <Date>2014-09-08T00:00:00</Date>
+    <Version>412</Version>
+  </LatestEpisode>
+</SerieInfo>

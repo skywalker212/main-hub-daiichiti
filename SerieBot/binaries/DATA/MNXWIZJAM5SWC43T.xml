@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Code Geass</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Canceled/Ended</Status>
+  <URL>http://www.tvrage.com/code-geass</URL>
+  <Genres>Anime</Genres>
+  <LatestEpisode>
+    <Name>Re.:</Name>
+    <Date>2008-09-28T00:00:00</Date>
+    <Version>225</Version>
+  </LatestEpisode>
+</SerieInfo>

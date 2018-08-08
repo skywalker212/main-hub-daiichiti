@@ -1,0 +1,17 @@
+System.Xml.XmlException: '<', hexadecimal value 0x3C, is an invalid attribute character. Line 4, position 140.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String[] args)
+   at System.Xml.XmlTextReaderImpl.Throw(Int32 pos, String res, String[] args)
+   at System.Xml.XmlTextReaderImpl.ParseAttributeValueSlow(Int32 curPos, Char quoteChar, NodeData attr)
+   at System.Xml.XmlTextReaderImpl.ParseAttributes()
+   at System.Xml.XmlTextReaderImpl.ParseElement()
+   at System.Xml.XmlTextReaderImpl.ParseElementContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.XmlLoader.LoadNode(Boolean skipOverWhitespace)
+   at System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)
+   at System.Xml.XmlLoader.Load(XmlDocument doc, XmlReader reader, Boolean preserveWhitespace)
+   at System.Xml.XmlDocument.Load(XmlReader reader)
+   at System.Xml.XmlDocument.LoadXml(String xml)
+   at FlowLib.Utils.Convert.Settings.XmlClient.Read(Byte[] data) in C:\Code\FlowLib\trunk\FlowLib\Utils\Convert\Settings\XmlClient.cs:line 101
+   at FlowLib.Utils.Convert.Settings.BaseClient.Read(String path) in C:\Code\FlowLib\trunk\FlowLib\Utils\Convert\Settings\BaseClient.cs:line 44
+   at ReleaseBot.Program.Main(String[] args) in C:\Code\ReleaseBot\SVN\trunk\Program.cs:line 70

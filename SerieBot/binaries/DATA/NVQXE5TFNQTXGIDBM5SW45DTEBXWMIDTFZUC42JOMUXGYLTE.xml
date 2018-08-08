@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Marvel's Agents of S.H.I.E.L.D.</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/SHIELD</URL>
+  <Genres>Action | Super Heroes</Genres>
+  <NextEpisode>
+    <Name>Aftershocks</Name>
+    <Date>2015-03-03T00:00:00</Date>
+    <Version>211</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>What They Become</Name>
+    <Date>2014-12-09T00:00:00</Date>
+    <Version>210</Version>
+  </LatestEpisode>
+</SerieInfo>

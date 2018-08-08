@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Game of Thrones</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/Game_of_Thrones</URL>
+  <Genres>Adventure | Drama | Fantasy</Genres>
+  <NextEpisode>
+    <Name>Season 5, Episode 1</Name>
+    <Date>2015-04-12T00:00:00</Date>
+    <Version>501</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>The Children</Name>
+    <Date>2014-06-15T00:00:00</Date>
+    <Version>410</Version>
+  </LatestEpisode>
+</SerieInfo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Outlander</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/outlander</URL>
+  <Genres>Action | Drama | History | Military/War | Romance/Dating | Sci-Fi</Genres>
+  <NextEpisode>
+    <Name>The Reckoning</Name>
+    <Date>2015-04-04T00:00:00</Date>
+    <Version>109</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>Both Sides Now</Name>
+    <Date>2014-09-27T00:00:00</Date>
+    <Version>108</Version>
+  </LatestEpisode>
+</SerieInfo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Supergirl</Name>
+  <ServiceAddress>www.TheTvDb.com</ServiceAddress>
+  <URL>http://thetvdb.com/api/0E122B1BB1298F0F/series/295759/all/en.xml</URL>
+  <Genres>Action | Drama | Science-Fiction</Genres>
+  <NextEpisode>
+    <Name>Myriad</Name>
+    <Date>2016-04-11T00:00:00</Date>
+    <Version>119</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>Worlds Finest</Name>
+    <Date>2016-03-28T00:00:00</Date>
+    <Version>118</Version>
+  </LatestEpisode>
+</SerieInfo>

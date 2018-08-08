@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Suits</Name>
+  <ServiceAddress>www.TheTvDb.com</ServiceAddress>
+  <URL>http://thetvdb.com/api/0E122B1BB1298F0F/series/247808/all/en.xml</URL>
+  <Genres>Drama</Genres>
+  <LatestEpisode>
+    <Name>Faith</Name>
+    <Date>2015-08-26T00:00:00</Date>
+    <Version>510</Version>
+  </LatestEpisode>
+</SerieInfo>

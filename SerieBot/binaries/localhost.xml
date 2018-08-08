@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Favorites>
+  <Hubs>
+    <Hub Name="DA-IICT MAiN HuB" Description="" Nick="Serie-Info" Password="4521" Server="dchub://10.100.95.1" UserDescription="Get Serie Info" ActivePort="11010" MaxNofLinesInMsg="15" UseActiveConnectionMode="False" UseDebug="False" />
+  </Hubs>
+</Favorites>

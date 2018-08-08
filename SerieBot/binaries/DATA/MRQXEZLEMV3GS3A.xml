@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>The Dare Devil</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/the-dare-devil</URL>
+  <Genres>Children</Genres>
+  <LatestEpisode>
+    <Name>Team Clan Do</Name>
+    <Date>2015-02-20T00:00:00</Date>
+    <Version>310</Version>
+  </LatestEpisode>
+</SerieInfo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Luther</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/Luther</URL>
+  <Genres>Crime | Drama</Genres>
+  <LatestEpisode>
+    <Name>Series 3, Episode 4</Name>
+    <Date>2013-07-23T00:00:00</Date>
+    <Version>304</Version>
+  </LatestEpisode>
+</SerieInfo>

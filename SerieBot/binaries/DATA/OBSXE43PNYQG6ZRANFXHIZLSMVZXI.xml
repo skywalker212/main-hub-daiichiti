@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Person of Interest</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>Returning Series</Status>
+  <URL>http://www.tvrage.com/Person_of_Interest</URL>
+  <Genres>Action | Crime | Drama</Genres>
+  <NextEpisode>
+    <Name>Guilty</Name>
+    <Date>2015-02-10T00:00:00</Date>
+    <Version>414</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>M.I.A.</Name>
+    <Date>2015-02-03T00:00:00</Date>
+    <Version>413</Version>
+  </LatestEpisode>
+</SerieInfo>

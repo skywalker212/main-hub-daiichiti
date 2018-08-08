@@ -1,0 +1,33 @@
+System.TypeInitializationException: The type initializer for 'ReleaseBot.Services.TheTvDb' threw an exception. ---> System.Xml.XmlException: 'pragma' is an unexpected token. The expected token is '"' or '''. Line 2, position 18.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String[] args)
+   at System.Xml.XmlTextReaderImpl.ThrowUnexpectedToken(String expectedToken1, String expectedToken2)
+   at System.Xml.XmlTextReaderImpl.ParseAttributes()
+   at System.Xml.XmlTextReaderImpl.ParseElement()
+   at System.Xml.XmlTextReaderImpl.ParseElementContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.Linq.XContainer.ReadContentFrom(XmlReader r)
+   at System.Xml.Linq.XContainer.ReadContentFrom(XmlReader r, LoadOptions o)
+   at System.Xml.Linq.XDocument.Load(XmlReader reader, LoadOptions options)
+   at System.Xml.Linq.XDocument.Load(String uri, LoadOptions options)
+   at System.Xml.Linq.XDocument.Load(String uri)
+   at ReleaseBot.Services.TheTvDb..cctor() in C:\Code\ReleaseBot\SVN\trunk\Services\TheTvDb.cs:line 51
+   --- End of inner exception stack trace ---
+   at ReleaseBot.Services.TheTvDb.get_IsValid()
+   at ReleaseBot.Service.GetNewInfo(String name) in C:\Code\ReleaseBot\SVN\trunk\Service.cs:line 188
+   at ReleaseBot.Service.GetSerie(String name) in C:\Code\ReleaseBot\SVN\trunk\Service.cs:line 148
+   at ReleaseBot.CommandHandler.TryHandleMsg(DcBot connection, String id, String command, Int32 msgtype) in C:\Code\ReleaseBot\SVN\trunk\CommandHandler.cs:line 111
+   at ReleaseBot.DcBot.prot_Update(Object sender, FmdcEventArgs e) in C:\Code\ReleaseBot\SVN\trunk\DcBot.cs:line 394
+   at FlowLib.Events.FmdcEventHandler.Invoke(Object sender, FmdcEventArgs e)
+   at FlowLib.Protocols.HubNmdcProtocol.ActOnInMessage(IConMessage comMsg) in C:\Code\FlowLib\trunk\FlowLib\Protocols\hubnmdcprotocol.cs:line 357
+   at FlowLib.Protocols.HubNmdcProtocol.ParseRaw(String raw) in C:\Code\FlowLib\trunk\FlowLib\Protocols\hubnmdcprotocol.cs:line 255
+   at FlowLib.Protocols.HubNmdcProtocol.ParseRaw(Byte[] b, Int32 length) in C:\Code\FlowLib\trunk\FlowLib\Protocols\hubnmdcprotocol.cs:line 229
+   at FlowLib.Connections.TcpConnection.OnRecievedData(IAsyncResult ar) in C:\Code\FlowLib\trunk\FlowLib\Connections\TcpConnection.cs:line 565
+   at FlowLib.Connections.Hub.OnRecievedData(IAsyncResult ar) in C:\Code\FlowLib\trunk\FlowLib\Connections\Hub.cs:line 461
+   at System.Net.LazyAsyncResult.Complete(IntPtr userToken)
+   at System.Net.ContextAwareResult.CompleteCallback(Object state)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Net.ContextAwareResult.Complete(IntPtr userToken)
+   at System.Net.LazyAsyncResult.ProtectedInvokeCallback(Object result, IntPtr userToken)
+   at System.Net.Sockets.BaseOverlappedAsyncResult.CompletionPortCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* pOVERLAP)

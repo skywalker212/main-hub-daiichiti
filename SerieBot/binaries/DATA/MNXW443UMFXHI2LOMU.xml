@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SerieInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Constantine</Name>
+  <ServiceAddress>www.TvRage.com</ServiceAddress>
+  <Status>New Series</Status>
+  <URL>http://www.tvrage.com/constantine</URL>
+  <Genres>Drama | Horror/Supernatural</Genres>
+  <NextEpisode>
+    <Name>Waiting for the Man</Name>
+    <Date>2015-02-13T00:00:00</Date>
+    <Version>113</Version>
+  </NextEpisode>
+  <LatestEpisode>
+    <Name>Angels and Ministers of Grace</Name>
+    <Date>2015-02-06T00:00:00</Date>
+    <Version>112</Version>
+  </LatestEpisode>
+</SerieInfo>
